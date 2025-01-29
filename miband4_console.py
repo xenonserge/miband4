@@ -63,7 +63,7 @@ else:
     print("  To use additional features of this script please put your Auth Key to 'auth_key.txt' or pass the --authkey option with your Auth Key")
     print()
     AUTH_KEY = None
-    
+
 # Validate Auth Key
 if AUTH_KEY:
     if 1 < len(AUTH_KEY) != 32:
@@ -235,7 +235,7 @@ if __name__ == "__main__":
         except KeyboardInterrupt:
             print("\nExit.")
             exit()
-        
+
     menu = CursesMenu("MIBand4", "Features marked with @ require Auth Key")
     info_item = FunctionItem("Get general info of the device", general_info)
     call_item = FunctionItem("Send Mail/ Call/ Missed Call/ Message", send_notif)
@@ -248,16 +248,32 @@ if __name__ == "__main__":
     set_time_item= FunctionItem("@ Set the band's time to system time", set_time)
     update_watchface_item = FunctionItem("@ Update Watchface", update_watchface)
     dfu_update_item = FunctionItem("@ Restore/Update Firmware", restore_firmware)
+
     
-    menu.append_item(info_item)
-    menu.append_item(steps_item)
-    menu.append_item(call_item)
-    menu.append_item(single_heart_rate_item)
-    menu.append_item(real_time_heart_rate_item)
-    menu.append_item(get_band_activity_data_item)
-    menu.append_item(set_time_item)
-    menu.append_item(set_music_item)
-    menu.append_item(lost_device_item)
-    menu.append_item(update_watchface_item)
-    menu.append_item(dfu_update_item)
-    menu.show()
+   
+    menu.items.append(info_item)
+    menu.items.append(steps_item)
+    menu.items.append(call_item)
+    menu.items.append(single_heart_rate_item)
+    menu.items.append(real_time_heart_rate_item)
+    menu.items.append(get_band_activity_data_item)
+    menu.items.append(set_time_item)
+    menu.items.append(set_music_item)
+    menu.items.append(lost_device_item)
+    menu.items.append(update_watchface_item)
+    menu.items.append(dfu_update_item)
+    menu.show()    
+
+
+    #menu.append_item(info_item)
+    #menu.append_item(steps_item)
+    #menu.append_item(call_item)
+    #menu.append_item(single_heart_rate_item)
+    #menu.append_item(real_time_heart_rate_item)
+    #menu.append_item(get_band_activity_data_item)
+    #menu.append_item(set_time_item)
+    #menu.append_item(set_music_item)
+    #menu.append_item(lost_device_item)
+    #menu.append_item(update_watchface_item)
+    #menu.append_item(dfu_update_item)
+    #menu.show()
